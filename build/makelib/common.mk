@@ -16,7 +16,8 @@
 .SUFFIXES:
 
 SHELL := /bin/bash
-SHA256CMD := shasum -a 256
+#SHA256CMD := shasum -a 256
+SHA256CMD := sha256sum 
 
 ifeq ($(origin PLATFORM), undefined)
 ifeq ($(origin GOOS), undefined)

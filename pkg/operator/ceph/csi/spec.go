@@ -53,15 +53,15 @@ var (
 
 const (
 	KubeMinMajor = "1"
-	KubeMinMinor = "13"
+	KubeMinMinor = "12"
 
 	// image names
-	DefaultRBDPluginImage    = "quay.io/cephcsi/rbdplugin:v1.0.0"
-	DefaultCephFSPluginImage = "quay.io/cephcsi/cephfsplugin:v1.0.0"
+	DefaultRBDPluginImage    = "quay.io/cephcsi/rbdplugin:v0.3.0"
+	DefaultCephFSPluginImage = "quay.io/cephcsi/cephfsplugin:v0.3.0"
 	DefaultRegistrarImage    = "quay.io/k8scsi/csi-node-driver-registrar:v1.0.2"
-	DefaultProvisionerImage  = "quay.io/k8scsi/csi-provisioner:v1.0.1"
-	DefaultAttacherImage     = "quay.io/k8scsi/csi-attacher:v1.0.1"
-	DefaultSnapshotterImage  = "quay.io/k8scsi/csi-snapshotter:v1.0.1"
+	DefaultProvisionerImage  = "quay.io/k8scsi/csi-provisioner:v0.3.0"
+	DefaultAttacherImage     = "quay.io/k8scsi/csi-attacher:v0.3.0"
+	DefaultSnapshotterImage  = "quay.io/k8scsi/csi-snapshotter:v0.4.0"
 
 	// template
 	DefaultRBDPluginTemplatePath         = "/etc/ceph-csi/rbd/csi-rbdplugin.yaml"

@@ -410,7 +410,7 @@ spec:
       serviceAccountName: rook-ceph-system
       containers:
       - name: rook-ceph-operator
-        image: rook/ceph:master
+        image: jgriffith/rook-ceph:latest
         args: ["ceph", "operator"]
         volumeMounts:
         - mountPath: /var/lib/rook

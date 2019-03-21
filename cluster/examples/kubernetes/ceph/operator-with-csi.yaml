@@ -420,7 +420,7 @@ spec:
       serviceAccountName: rook-ceph-system
       containers:
       - name: rook-ceph-operator
-        image: rook/ceph:master
+        image: jgriffith/rook-ceph:latest
         args: ["ceph", "operator"]
         volumeMounts:
         - mountPath: /var/lib/rook
@@ -429,8 +429,8 @@ spec:
           name: default-config-dir
         - mountPath: /etc/ceph-csi/rbd
           name: csi-rbd-config
-        - mountPath: /etc/ceph-csi/cephfs
-          name: csi-cephfs-config                    
+          #- mountPath: /etc/ceph-csi/cephfs
+          #name: csi-cephfs-config                    
         env:
         # To disable RBAC, uncomment the following:
         # - name: RBAC_ENABLED
@@ -496,21 +496,21 @@ spec:
           value: "true"
         # CSI enablement
         - name: ROOK_CSI_ENABLE_CEPHFS
-          value: "true"
+          value: "false"
         - name: ROOK_CSI_CEPHFS_IMAGE
-          value: "quay.io/cephcsi/cephfsplugin:v1.0.0"
+          value: "quay.io/cephcsi/cephfsplugin:v0.3.0"
         - name: ROOK_CSI_ENABLE_RBD
           value: "true"
         - name: ROOK_CSI_RBD_IMAGE
-          value: "quay.io/cephcsi/rbdplugin:v1.0.0"
+          value: "quay.io/cephcsi/rbdplugin:v0.3.0"
         - name: ROOK_CSI_REGISTRAR_IMAGE
           value: "quay.io/k8scsi/csi-node-driver-registrar:v1.0.2"
         - name: ROOK_CSI_PROVISIONER_IMAGE
-          value: "quay.io/k8scsi/csi-provisioner:v1.0.1"
+          value: "quay.io/k8scsi/csi-provisioner:v0.3.0"
         - name: ROOK_CSI_SNAPSHOTTER_IMAGE
-          value: "quay.io/k8scsi/csi-snapshotter:v1.0.1"
+          value: "quay.io/k8scsi/csi-snapshotter:v0.4.0"
         - name: ROOK_CSI_ATTACHER_IMAGE
-          value: "quay.io/k8scsi/csi-attacher:v1.0.1"
+          value: "quay.io/k8scsi/csi-attacher:v0.3.0"
         # The name of the node to pass with the downward API
         - name: NODE_NAME
           valueFrom:
